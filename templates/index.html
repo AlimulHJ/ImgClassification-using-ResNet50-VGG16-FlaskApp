@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Img Classifier</title>
+        <!-- <link rel="stylesheet" href="./style.css"> -->
+        <!-- <link rel="icon" href="./favicon.ico" type="image/x-icon"> -->
+
+        <!-- Bootstrap CSS -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+        
+        <style>
+            .img-display {
+                max-width: 25vw;
+                margin: 3.5vh auto;
+            }
+            .img-display img {
+                width: 100%;
+                height: auto;
+            }
+        </style>
+    </head>
+    <body>
+        <h1 class="p-3 text-center">Image Classifier</h1>
+        <h5 class="text-center">Select & upload image to classify</h5>
+
+        <!-- Form for selecting & uploading the image -->
+        <div class="img-form-div">
+            <form class="p-4 text-center" action='/' method="post" enctype="multipart/form-data">
+                <div class="d-flex justify-content-center">
+                    <input class="form-control" type="file" name="file" accept="image/*" style="width: 50%;" required>
+                </div>
+
+                <input class="btn btn-primary mt-3" type="submit" value="Predict">
+            </form>
+        </div>
+
+        <!-- Conditional rendering of the prediction & probability -->
+        {% if prediction and probability %}
+            <h5 class="text-center">Image contains: {{ prediction }}</h5>
+            <h6 class="text-center">Probability: {{ probability }}%</h6>
+        {% endif %}
+
+        <!-- Display the uploaded image -->
+        <div class="img-display">
+            {% if image_path %}
+                <h6 class="text-center">Selected image</h6>
+                <img src="{{ image_path }}" alt="Uploaded Image">
+            {% endif %}
+        </div>
+
+    </body>
+</html>
