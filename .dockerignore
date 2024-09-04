@@ -1,0 +1,44 @@
+# Python cache files
+__pycache__
+*.pyc
+*.pyo
+*.pyd
+
+# Virtual environment
+venv/
+.env
+
+# Version control
+.git
+.gitignore
+
+# IDE-specific files
+.vscode/
+
+# Temporary files
+*.log
+*.swp
+*.swo
+
+
+# Test and documentation
+tests/
+docs/
+
+# Dependency management
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Docker
+Dockerfile
+docker-compose.yml
+
+# Application specific
+static/uploads/*
+!static/uploads/.gitkeep
+
+# Additionals
+Include
+Lib
+Scripts
+pyvenv.cfg
