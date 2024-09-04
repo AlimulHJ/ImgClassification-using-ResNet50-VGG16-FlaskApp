@@ -34,8 +34,8 @@ Dockerfile
 docker-compose.yml
 
 # Application specific
-static/uploads/*
-!static/uploads/.gitkeep
+static/usr-uploads/*
+!static/usr-uploads/.gitkeep
 
 # Additionals
 Include

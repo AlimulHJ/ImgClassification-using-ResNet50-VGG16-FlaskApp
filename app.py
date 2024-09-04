@@ -9,7 +9,7 @@ app = Flask(__name__)
 
 # Set the upload folder inside the root directory
 ROOT_FOLDER = os.path.dirname(os.path.abspath(__file__))
-UPLOAD_FOLDER = os.path.join(ROOT_FOLDER, 'static', 'images-usr-up')
+UPLOAD_FOLDER = os.path.join(ROOT_FOLDER, 'static', 'usr-uploads')
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 
 ALLOWED_EXTENSIONS = {'png', 'jpg', 'jpeg', 'gif'}
@@ -54,7 +54,7 @@ def upload_file():
             prediction = label[1]
             probability = "{:.2f}".format(label[2] * 100)
 
-            return render_template('index.html', image_path=url_for('static', filename=f'images-usr-up/{filename}'), prediction=prediction, probability=probability)
+            return render_template('index.html', image_path=url_for('static', filename=f'usr-uploads/{filename}'), prediction=prediction, probability=probability)
     return render_template('index.html')
 
 
