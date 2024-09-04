@@ -14,7 +14,7 @@ app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 
 ALLOWED_EXTENSIONS = {'png', 'jpg', 'jpeg', 'gif'}
 
-# Load the model:
+# Import the model above (Comment/Uncomment)
 # model = ResNet50()
 model = VGG16()
 
